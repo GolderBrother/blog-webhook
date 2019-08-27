@@ -1,0 +1,17 @@
+{
+  "name": "blog-webhook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webhook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start ./webhook.js --name blog-webhook --watch",
+    "stop": "pm2 stop blog-webhook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.3.0"
+  }
+}
