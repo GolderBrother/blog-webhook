@@ -2,7 +2,6 @@ const http = require('http');
 const crypto = require('crypto');
 // 子进程
 const { spawn } = require('child_process');
-const server = http.createServer();
 // 发送邮件功能
 const sendMail = require('./sendMail');
 // github上配置的密钥
