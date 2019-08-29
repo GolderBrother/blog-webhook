@@ -43,6 +43,7 @@ const server = http.createServer(function(req, res){
             if(event === 'push') {
                 const payload = JSON.parse(body);
                 // 找脚本，开个子进程去执行这个脚本
+                console.log(`./${payload.repository.name}.sh`);
                 const child = spawn('sh', [`./${payload.repository.name}.sh`]);
                 child.stdout.on('data', (buffer) => {
                     buffers.push(buffer);
