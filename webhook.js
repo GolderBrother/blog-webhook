@@ -16,11 +16,11 @@ function sign(body) {
 }
 
 const server = http.createServer(function(req, res){
-    console.log(req.method, res.url);
+    console.log(req.method, req.url);
     if(req.url === '/') {
         res.end('Hello blog-webhook~~');
     }
-    if(req.method === 'POST' && res.url === '/webhook') {
+    if(req.method === 'POST' && req.url === '/webhook') {
         let buffers = [];
         req.on('data', function(buffer){
             // 收起发过来的数据
