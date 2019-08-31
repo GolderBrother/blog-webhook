@@ -21,9 +21,9 @@ docker stop blog-react-container
 docker rm blog-react-container
 echo "启动新容器"
 # docker容器端口映射
-# 宿主机的端口映射到docker容器的7000端口，前提是docker容器要暴露端口出来
+# 宿主机的端口映射到docker容器的80端口，前提是docker容器要暴露端口出来
 # -d:后台运行，不堵塞当前命令行窗口
 # blog-react-container: 容器名字（基于blog-react镜像启动服务，后台运行）
-docker container run -p 7000:7000 --name blog-react-container -d blog-react:1.0 
+docker container run -p 80:80 --name blog-react-container -d blog-react:1.0 
 
 
