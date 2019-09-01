@@ -40,11 +40,11 @@ const server = http.createServer(function(req, res){
             res.setHeader('Content-Type', 'application/json');
             res.end(JSON.stringify({ok: true}));
             // post请求就开始自动部署
-            if(event === 'push') {
+            if(event == 'push') {
                 const payload = JSON.parse(body);
                 // 找脚本，开个子进程去执行这个脚本
                 console.log(`./${payload.repository.name}.sh`);
-                const child = spawn('sh', [`./${payload.repository.name}.sh`]);
+                const child = spawn('sh',[`./${payload.repository.name}.sh`]);
                 child.stdout.on('data', (buffer) => {
                     buffers.push(buffer);
                 });
