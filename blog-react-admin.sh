@@ -22,4 +22,5 @@ echo '启动新容器'
 # 宿主机的端口映射到docker容器的8000端口，前提是docker容器要暴露端口出来
 # -d:后台运行，不堵塞当前命令行窗口
 # blog-react-admin: 镜像名字（基于blog-react-admin镜像启动服务，后台运行）
-docker container run -p 8000:8000 blog-react-admin-container -d blog-react-admin:1.0
+docker container run -p 8000:8000 -d --name blog-react-admin-container blog-react-admin:1.0
+
