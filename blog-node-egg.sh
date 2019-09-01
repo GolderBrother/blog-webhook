@@ -21,5 +21,5 @@ echo '启动新容器'
 # -p 6000:6000:宿主机的端口(:前面的)映射到docker容器的6000端口(:后面的)，前提是docker容器要暴露端口出来
 # -d:后台运行，不堵塞当前命令行窗口
 # blog-node-egg: 镜像名字（基于blog-node-egg镜像启动服务，后台运行）
-docker container run -d --name blog-node-egg-container blog-node-egg:1.0
+docker container run -d --net=host --name blog-node-egg-container blog-node-egg:1.0
 
