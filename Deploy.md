@@ -168,6 +168,8 @@ sudo docker exec -it containerId /bin/sh
 先查看容器列表，找到要查看容器的ID，然后使用该命令查看。/bin/sh可在执行docker ps后看到。退出容器可以执行exit;。
 
 ## 目前问题
-1 .sh文件不能自动执行(重要！！)
-2 提交代码不能触发webhook(重要！！)
-3 Dockerfile里面的脚本貌似不能自动执行
+1 .sh文件不能自动执行(已解決)
+2 提交代码不能触发webhook(已解決)
+3 Dockerfile里面的脚本貌似不能自动执行(已解決)
+4 blog-react-admin 打包不能访问
+(Cannot read property 'authority' of undefined)
