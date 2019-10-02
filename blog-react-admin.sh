@@ -13,7 +13,7 @@ echo '编译打包'
 npm run build
 echo '开始进行构建'
 # 创建镜像8000
-docker build -t blog-react-admin:1.0
+docker build -t blog-react-admin:1.0 .
 echo '停止旧容器并删除旧容器'
 docker stop blog-react-admin-container
 docker rm blog-react-admin-container
