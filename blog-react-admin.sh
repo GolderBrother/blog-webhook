@@ -21,7 +21,8 @@ echo '启动新容器'
 # docker容器端口映射
 # 宿主机的端口映射到docker容器的8000端口，前提是docker容器要暴露端口出来
 # -d:后台运行，不堵塞当前命令行窗口
-# blog-react-admin: 镜像名字（基于blog-react-admin镜像启动服务，后台运行）# TODO：这边启动会出现80端口被占用，导致容器启动失败，需要解决，因此先杀掉所有80端口的进程
-kill -9 $(lsof -i tcp:80 -t)
+# blog-react-admin: 镜像名字（基于blog-react-admin镜像启动服务，后台运行）
+# TODO：这边启动会出现8000端口被占用，导致容器启动失败，需要解决，因此先杀掉所有8000端口的进程
+kill -9 $(lsof -i tcp:8000 -t)
 docker container run -p 8000:8000 -d --name blog-react-admin-container blog-react-admin:1.0
 
