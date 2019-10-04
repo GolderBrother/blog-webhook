@@ -17,6 +17,8 @@ echo '停止旧容器并删除新容器'
 docker stop blog-node-egg-container
 docker rm blog-node-egg-container
 echo '启动新容器'
+# TODO：这边启动会出现6100端口被占用，导致容器启动失败，需要解决，因此先杀掉所有6100端口的进程
+kill -9 $(lsof -i tcp:6100 -t)
 # docker容器端口映射
 # -p 6100:6100:宿主机的端口(:前面的)映射到docker容器的6000端口(:后面的)，前提是docker容器要暴露端口出来
 # -d:后台运行，不堵塞当前命令行窗口
