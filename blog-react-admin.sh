@@ -25,4 +25,5 @@ echo '启动新容器'
 # TODO：这边启动会出现8000端口被占用，导致容器启动失败，需要解决，因此先杀掉所有8000端口的进程
 kill -9 $(lsof -i tcp:8000 -t)
 docker container run -p 8000:8000 -d --name blog-react-admin-container blog-react-admin:1.0
-
+# 启动完容器后，释放8000端口，解决简历页面(http://116.62.6.228:8001/)启动，nginx报错8000端口占用问题
+kill -9 $(lsof -i tcp:8000 -t)
