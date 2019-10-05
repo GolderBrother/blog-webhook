@@ -27,3 +27,5 @@ kill -9 $(lsof -i tcp:8000 -t)
 docker container run -p 8000:8000 -d --name blog-react-admin-container blog-react-admin:1.0
 # 启动完容器后，释放8000端口，解决简历页面(http://116.62.6.228:8001/)启动，nginx报错8000端口占用问题
 kill -9 $(lsof -i tcp:8000 -t)
+# 重启nginx(使得建立页面能够正常访问)
+systemctl restart nginx

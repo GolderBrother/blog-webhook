@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pm2 start ./webhook.js --name blog-webhook --watch",
-    "stop": "pm2 stop blog-webhook"
+    "stop": "pm2 stop blog-webhook",
+    "push": "git add -A && git commit -a -m 'update' && git push origin master"
   },
   "keywords": [],
   "author": "",
