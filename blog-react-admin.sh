@@ -10,7 +10,8 @@ git clean -f
 echo '拉取最新代码'
 git pull origin master
 echo '编译打包'
-npm run build
+# 这边需要手动打包后提交,因为要处理一些打包后的静态资源引用路径问题
+# npm run build
 echo '开始进行构建'
 # 创建镜像8000
 docker build -t blog-react-admin:1.0 .
