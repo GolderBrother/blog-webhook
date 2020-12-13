@@ -24,5 +24,5 @@ kill -9 $(lsof -i tcp:6100 -t)
 # -d:后台运行，不堵塞当前命令行窗口
 # blog-node-egg: 镜像名字（基于blog-node-egg镜像启动服务，后台运行）
 # docker container run -p 6100:6100 -d --name blog-node-egg-container blog-node-egg:1.0
-docker container run -d --net=host --name blog-node-egg-container blog-node-egg:1.0
+docker container run -d --net=host -p 6100:6100 --name blog-node-egg-container blog-node-egg:1.0
 
